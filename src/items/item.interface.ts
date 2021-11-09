@@ -1,7 +1,7 @@
 export interface BaseItem {
     name: string;
     price: number;
-    dascription: string;
+    description: string;
     image: string;
 }
 
