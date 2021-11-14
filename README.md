@@ -8,6 +8,7 @@
 ---
 
 # 배운것 ( 21.11.09~ing)
+
 - 인터페이스
   - 타입스크립트 유형 검사는 값의 형태에 초점을 맞춤.(duck typing, structural subtyping)
   - 인터페이스는 이런 유형의 이름을 지정하는 역할을 한다.
@@ -58,3 +59,12 @@ export interface Item extends BaseItem {
 { 위 코드에서도 BaseItem 객체의 요구사항을 인터페이스가 설명하고 있다.  
 Item의 요구사항은 BaseItem기반으로 한다.}
 
+### controller
+- 모듈에서 내보낸 모든 함수를 가져와서 로컬에 하나의 객체로 묶어서 이름 충돌을 피하고  
+  어떤 패키지에서 함수가 나오는지 쉽게 찾을 수 있다.
+  ```javascript
+  import * as ItemService from "./items.service";
+  ```
+  
+- 컨트롤러의 로직은 서비스에 위임하므로, 코드가 간결하다.
+- 데이터를 유지하기 위해 mongoDB 등을 사용할 경우, ItemService 모듈의 로직만 수정하면 됨
