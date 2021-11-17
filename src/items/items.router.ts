@@ -17,7 +17,6 @@ export const itemsRouter = express.Router();
  * Controller Definitions
  */
 
-});
 // GET items
 itemsRouter.get("/", async(req: Request, res:Response) => {
     try{
@@ -27,6 +26,7 @@ itemsRouter.get("/", async(req: Request, res:Response) => {
     } catch (e) {
         res.status(500).send(e.message);
     }
+})
 
 // GET items/:id
 itemsRouter.get("/:id", async(req: Request, res:Response) => {
@@ -43,7 +43,8 @@ itemsRouter.get("/:id", async(req: Request, res:Response) => {
     }catch(e) {
         res.status(500).send(e.message);
     }
-});
+})
+
 
 // POST items
 itemsRouter.post("/", async(req: Request, res:Response) => {
