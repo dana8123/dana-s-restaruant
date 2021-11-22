@@ -1,5 +1,7 @@
 # dana-s-restaruant
 연재의 레스토랑 메뉴 with Node.js, typescript, express
+- https://auth0.com/blog/node-js-and-typescript-tutorial-build-a-crud-api/#test-the-express-api-endpoints
+- 위 주소의 자료를 보고 공부한 것을 정리하는 레포지토리
 ---
 
 # 실행방법
@@ -70,4 +72,47 @@ export interface Item extends BaseItem {
   어떤 패키지에서 함수가 나오는지 쉽게 찾을 수 있다.
   ```javascript
   import * as ItemService from "./items.service";
+
   ```
+### 객체지향 구문
+- 자바스크립트에서 클래스는 함수의 한 종류이다.
+- 이전에 프로토타입으로 클래스를 사용할 수 있었으나 es6에서 클래스개념이 도입되었다.
+
+
+```javascript
+class Member {
+  // 생성자
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  
+  // 메서드
+
+  getName() {
+    return this.lastName + this.firstName;
+  }
+}
+
+let m = new Member('연재','김');
+console.log(m.getName()); // 김연재
+```
+- `class Member`가 하는 일
+  - Member라는 이름을 가진 함수를 생성, 함수 본문은 생성자 메서드 `constructor`에서 가져옴.
+  - 생성자 메서드가 없으면, 본문이 비워진 채로 함수가 만들어짐
+- getName()같은 클래스 내에서 정의한 메소드를 `Member.prototyp`에 저장
+
+클래스 명령
+  class 클래스명 {
+    ...셍성자 정의
+    ...프로퍼티 정의
+    ...메소드 정의
+  }
+- 생성자는 객체를 초기화 하는 역할을 한다.
+- 생성자의 이름은 constructor로 고정
+- 
+
+## 에러 핸들링 
+- 클라이언트가 예상치 못한 경로로 요청을 한다면, 400 Bad Request로 응답한다.
+- 이러한 것을 처리하는 미들웨어를 만들어 관리하는것이 좋다.
+

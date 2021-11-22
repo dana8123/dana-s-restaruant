@@ -77,7 +77,7 @@ itemsRouter.put("/:id", async(req: Request, res:Response) => {
         const newItem = await ItemService.create(itemUpdate);
 
         res.status(201).json(newItem)
-
+        
     } catch(e) {
         res.status(500).send(e.message);
     }
@@ -91,7 +91,7 @@ itemsRouter.delete("/:id", async(req:Request, res:Response) => {
         await ItemService.remove(id);
 
         res.sendStatus(204);
-    } catch(e) {
         res.status(500).send(e.message);
+    } catch(e) {
     }
 })
